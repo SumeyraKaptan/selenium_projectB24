@@ -9,9 +9,8 @@ public class CalculatorAddTestV2 {
     public static void main(String[] args) {
         String appUrl = "https://www.calculator.net";
         int num1 = 8, num2 = 9;
-        /**
-         Homework: make selenium work for numbers morw than 1 digit as well int num1 = 128, num2 = 90, etc
-         */
+
+
         int expectedResult = num1 +num2;
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
