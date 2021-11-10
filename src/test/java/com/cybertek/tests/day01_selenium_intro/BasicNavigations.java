@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BasicNavigations {
-    public static void main(String[] args) {
-        //1- set up browser driver
-        WebDriverManager.chromedriver(). setup();
+    public static void main(String[] args) throws InterruptedException {
+        //1) set up the browser driver
+        WebDriverManager.chromedriver().setup();
 
-        //2-open browser
+        //Open browser
         WebDriver driver = new ChromeDriver();
 
         //navigate to tesla homepage
@@ -19,16 +19,20 @@ public class BasicNavigations {
         //on the browser
         driver.navigate().back();
 
-        //pause the code. code will sleep/wait
-
+        //pause/stop the code. code will sleep/wait
+        Thread.sleep(2000);
 
         //navigate forward
         driver.navigate().forward();
 
-        //refresh the page
+        Thread.sleep(2000);
+
+        //refresh the page.
         driver.navigate().refresh();
 
-        //navigate to esty homepage
+        Thread.sleep(2000);
+
+        //navigate to etsy homepage
         driver.navigate().to("https://www.bestbuy.com");
 
         //print title of the page
@@ -36,7 +40,6 @@ public class BasicNavigations {
 
         //close the browser
         driver.quit();
-
 
 
     }
