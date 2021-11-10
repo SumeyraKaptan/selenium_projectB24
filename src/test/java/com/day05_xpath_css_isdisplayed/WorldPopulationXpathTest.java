@@ -6,16 +6,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class WorldPopulationXpathTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         String appUrl = "https://www.worldometers.info/world-population";
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.get(appUrl);
-
-
+        Thread.sleep(4000);
         //<div class="maincounter-number">
+        WebElement worldPopulation = driver.findElement(By.xpath("//div[@class='maincounter-number']"));
 
-        WebElement worldPopulation = driver.findElement(By.xpath("//div[@]"));
         System.out.println(worldPopulation.getText());
+
+        for(int i = 1; i <= 10; i++) {
+            Thread.sleep(1000);
+            System.out.println(i + " - " + worldPopulation.getText());
+        }
+
+        driver.quit();
+
     }
 }
